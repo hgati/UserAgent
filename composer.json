@@ -1,0 +1,7 @@
+{
+	"name": "hgati/useragent",
+	
+	"autoload": {
+		"classmap": ["UserAgentBase.php", "UserAgent.php"]
+	}
+}
