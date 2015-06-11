@@ -55,9 +55,9 @@ class UserAgent extends UserAgentBase {
 	public static function chrome() {
 		$saf = mt_rand(531, 536) . mt_rand(0, 2);
 		$platforms = array(
-			'(' . static::linuxPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 15) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf",
-			'(' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 15) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf",
-			'(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 15) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf"
+			'(' . static::linuxPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 41) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf",
+			'(' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 41) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf",
+			'(' . static::macPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Chrome/" . mt_rand(13, 41) . '.0.' . mt_rand(800, 899) . ".0 Safari/$saf"
 		);
 		return 'Mozilla/5.0 ' . static::randomElement($platforms);
 	}
@@ -69,7 +69,7 @@ class UserAgent extends UserAgentBase {
 	 */
 	public static function firefox() {
 		$ver = array(
-			'Gecko/' . date('Ymd', mt_rand(strtotime('2011-1-1'), time())) . ' Firefox/' . mt_rand(4, 15) . '.0',
+			'Gecko/' . date('Ymd', mt_rand(strtotime('2011-1-1'), time())) . ' Firefox/' . mt_rand(4, 36) . '.0',
 			'Gecko/' . date('Ymd', mt_rand(strtotime('2010-1-1'), time())) . ' Firefox/3.6.' . mt_rand(1, 20),
 			'Gecko/' . date('Ymd', mt_rand(strtotime('2010-1-1'), time())) . ' Firefox/3.8'
 		);
@@ -96,7 +96,7 @@ class UserAgent extends UserAgentBase {
 		$platforms = array(
 			'(Windows; U; ' . static::windowsPlatformToken() . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
 			'(' . static::macPlatformToken() . ' rv:' . mt_rand(2, 6) . '.0; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/$ver Safari/$saf",
-			'(iPod; U; CPU iPhone OS ' . mt_rand(3, 4) . '_' . mt_rand(0, 3) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . mt_rand(3, 4) . ".0.5 Mobile/8B" . mt_rand(111, 119) . " Safari/6$saf",
+			'(iPod; U; CPU iPhone OS ' . mt_rand(3, 4) . '_' . mt_rand(0, 3) . ' like Mac OS X; ' . static::randomElement(static::$lang) . ") AppleWebKit/$saf (KHTML, like Gecko) Version/" . mt_rand(3, 7) . ".0.5 Mobile/8B" . mt_rand(111, 119) . " Safari/6$saf",
 		);
 		return "Mozilla/5.0 " . static::randomElement($platforms);
 	}
@@ -120,7 +120,7 @@ class UserAgent extends UserAgentBase {
 	 * @example 'Mozilla/5.0 (compatible; MSIE 7.0; Windows 98; Win 9x 4.90; Trident/3.0)'
 	 */
 	public static function internetExplorer() {
-		return 'Mozilla/5.0 (compatible; MSIE ' . mt_rand(5, 9) . '.0; ' . static::windowsPlatformToken() . '; Trident/' . mt_rand(3, 5) . '.' . mt_rand(0, 1) . ')';
+		return 'Mozilla/5.0 (compatible; MSIE ' . mt_rand(5, 11) . '.0; ' . static::windowsPlatformToken() . '; Trident/' . mt_rand(3, 7) . '.' . mt_rand(0, 1) . ')';
 	}
 
 	public static function windowsPlatformToken() {
