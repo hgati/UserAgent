@@ -43,7 +43,7 @@ class UserAgent extends UserAgentBase {
 	 * @example 'Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350'
 	 */
 	public static function random($realuseragent=false) {
-		if($realuseragent){
+		if($realuseragent){ // Webdriver "undefined is not an object" 에러 방지용. WebKit들어간 useragent string중에서만 랜덤하게~ 
 			$array = unserialize(file_get_contents(__DIR__.'/useragent.dat'));
 			$k = array_rand($array); $v = $array[$k];
 			return $v;
