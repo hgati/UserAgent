@@ -42,7 +42,8 @@ class UserAgent extends UserAgentBase {
 	 *
 	 * @example 'Mozilla/5.0 (Windows CE) AppleWebKit/5350 (KHTML, like Gecko) Chrome/13.0.888.0 Safari/5350'
 	 */
-	public static function random() {
+	public static function random($userAgent=array()) {
+		$userAgent = empty($userAgent)?static::$userAgents:$userAgent;
 		$userAgentName = static::randomElement(static::$userAgents);
 		return static::$userAgentName();
 	}
